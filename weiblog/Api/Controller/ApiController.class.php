@@ -15,14 +15,13 @@ class ApiController extends Controller {
        print_r($User->select());
        
        $data['name'] = 'ThinkPHP';
-$data['email'] = 'ThinkPHP@gmail.com';
-$User->create($data);
-       dump($User);
+
+      $data['email'] = 'ThinkPHP@gmail.com';
+        $User->create($data);
+        dump($User);
 
        $fields = $User->getDbFields();
        echo "<br>";
         print_r($fields);
-        
-
     }
 }

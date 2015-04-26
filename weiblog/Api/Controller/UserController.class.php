@@ -12,10 +12,25 @@ class UserController extends Controller{
 		}
 			
 
+		showErrorMsg();
 		//跨模块调用
 		// A('Index')->showErrorMsg("get is not support!");
 		// $index = A('Index');
 		// $index->index();
+
+		$login_name = I('post.login_name');
+		if(empty($login_name)){
+			echo "账户存在异常";
+			return ;
+		}
+
+		$login_pwd = I('post.login_pwd');
+		if(empty($login_pwd)){
+			echo "密码存在异常";
+			return;
+		}
+
+		//数据库中检测账号和密码
 		
 	}	
 
@@ -32,7 +47,6 @@ class UserController extends Controller{
 
 		$login_pwd = I('post.login_pwd');
 		if(empty($login_pwd)){
-
 			return;
 		}
 
@@ -45,5 +59,14 @@ class UserController extends Controller{
 		$phone = I("post.phone");
 		$addr = I('post.addr');
 
+
+	}
+
+	public function modify(){
+		echo "waiting...";
+	}
+
+	public function init(){
+		//准备数据库
 	}
 }

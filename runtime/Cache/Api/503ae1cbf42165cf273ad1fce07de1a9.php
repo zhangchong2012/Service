@@ -17,10 +17,8 @@
 				<?php if(is_array($list_api_names)): foreach($list_api_names as $k=>$vo): ?><tr>
 						<td><?php echo ($k); ?></td>
 						<td><?php echo ($vo); ?></td>
-   					
    					<tr><?php endforeach; endif; ?>
 			</table>
-			
 		</div>
 		<div></div>
 	</div>

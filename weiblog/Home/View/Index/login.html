@@ -4,23 +4,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<!--导入css -->
-<import type='css' file="api" basepath="./weiblog/Api/Css" />
-<title>Api文档</title>
+<script type="text/javascript">
+	function login_submit()	{
+		alert(this);return false;
+	}
+</script>
+<title>Login</title>
 </head>
 
 <body>
 	<div class="div_main">
 		<div class="div_title">{$title}</div>
 		<div>
-			 <table>		
-				<foreach name="list_api_names" item="vo" key="k" >
-					<tr>
-						<td>{$k}</td>
-						<td>{$vo}</td>
-   					<tr>
-				</foreach>
-			</table>
+			<form name="form_login", method="post" action="javascript:login_submit()">
+					Username: 
+			<input type="text" name="user" />
+			<input type="submit" value="Submit" />
+			</form>
 		</div>
 		<div></div>
 	</div>

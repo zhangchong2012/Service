@@ -9,8 +9,12 @@ class IndexController extends Controller {
 
 
 
-       $list_names =  array("账号注册","账号登陆");
+       	$list_names =  array("账号注册","账号登陆");
  		$this->assign('list_api_names',$list_names);
-       $this->display();
+	   	$this->display();
     }
+
+    public function init(){
+		//准备数据库
+	}
 }
