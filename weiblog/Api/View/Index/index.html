@@ -7,18 +7,62 @@
 <!--导入css -->
 <import type='css' file="api" basepath="./weiblog/Api/Css" />
 <title>Api文档</title>
+
+  <style type="text/css">
+        .maintable
+        {
+            border-collapse: collapse;
+            border: none;
+            width: 200px;
+        }
+        .maintable td
+        {
+            border: solid #000 1px;
+        }
+    </style>
 </head>
 
 <body>
 	<div class="div_main">
 		<div class="div_title">{$title}</div>
 		<div>
-			 <table>		
-				<foreach name="list_api_names" item="vo" key="k" >
+			 <table class="maintable">		
+			 	<volist name="apis" id="data">
 					<tr>
-						<td>{$k}</td>
-						<td>{$vo}</td>
+						<td>Api</td>
+						<td>{$data.api_name}</td>
+   					</tr>
    					<tr>
+   						<td>URL</td>
+						<td>{$data.api_url}</td>
+   					</tr>
+   					<tr>
+   						<td>Method</td>
+						<td>{$data.api_method}</td>
+   					</tr>
+   					<tr>
+   						<td>Param</td>
+   						<td>
+   							<table border="0">
+   								<tr>
+   									<td>参数</td>
+   									<td>类型</td>
+   									<td>说明</td>
+   								</tr>
+   							<volist name="data['api_params']" id="api_param">
+   								<tr>
+	   								<td>{$api_param.param_name}</td>
+	   								<td>{$api_param.param_type}</td>
+									<td>{$api_param.param_summary}</td>		
+								</tr>					
+   							</volist>
+   						</table>	
+   						</td>
+						
+   					</tr>
+				</volist>
+				<foreach name="apis" item="vo" key="k" >
+					
 				</foreach>
 			</table>
 		</div>
