@@ -64,11 +64,10 @@ class IndexController extends Controller {
         echo "Error creating database: " . mysql_error();
       }
       mysql_close($con);
-
     }   
 
     private function initAuth($con){  
-       // -- think_auth_rule，规则表， 
+      // -- think_auth_rule，规则表， 
       // -- id:主键，name：规则唯一标识, title：规则中文名称 status 状态：为1正常，为0禁用，condition：规则表达式，为空表示存在就验证，不为空表示按照条件验证
       $sql_drop_rule = "DROP TABLE IF EXISTS `auth_rule`";
       $sql_create_rule = "CREATE TABLE `auth_rule` (  
@@ -132,5 +131,17 @@ class IndexController extends Controller {
       }else{
        echo "Error creating database: " . mysql_error();
       }
+    }
+
+    private function initData($con){
+      //auth
+      $group1 = "INSERT INTO `auth_group` VALUES ('1', '管理组', '1', '1,2');";
+      $group_access1 = "INSERT INTO `auth_group_access` VALUES ('1', '1');";
+      $group_access2 = "INSERT INTO `auth_group_access` VALUES ('1', '2');";
+
+      $user1 = "INSERT INTO `auth_rule` VALUES ('1', 'Home/index', '列表', '1', 'Home', '');";
+      $user2 = "INSERT INTO `auth_rule` VALUES ('2', 'Home/add', '添加', '1', 'Home', '');";
+      $user3 = "INSERT INTO `auth_rule` VALUES ('3', 'Home/edit', '编辑', '1', 'Home', '');";
+      $user4 = "INSERT INTO `auth_rule` VALUES ('4', 'Home/delete', '删除', '1', 'Home', '');";
     }
 }
