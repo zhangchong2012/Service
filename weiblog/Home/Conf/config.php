@@ -20,7 +20,7 @@ return array(
 
 	'SESSION_AUTO_START' =>true,
 
-	'USER_AUTH_KEY' => 'uid',
+	'USER_AUTH_KEY' => 'authId',
 
 	'AUTH_CONFIG'=>array(
     'AUTH_ON' => true, //认证开关

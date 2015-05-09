@@ -13,10 +13,11 @@ class IndexController extends Controller {
     }
 
     public function logout(){
-    	if($_SESSION[C('USER_AUTH_KEY')]){
-    		session_destroy();
-    		$this->redirect('')
-    	}
+    	// if($_SESSION[C('USER_AUTH_KEY')]){
+    	// 	session_destroy();
+    	// 	$this->redirect('')
+    	// }
+        $this->display();
     }
 
 }
